@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-navy-950: #050c1a;
+  --color-navy-900: #0a1a33;
+  --color-navy-800: #10305c;
+  --color-navy-700: #1a4276;
+  --color-navy-100: #dbe6f5;
+  --color-navy-50: #eef3fa;
+
+  --color-gold-700: #8a6d15;
+  --color-gold-600: #b08d1e;
+  --color-gold-500: #c9a227;
+  --color-gold-400: #ddb84e;
+  --color-gold-100: #f7ecd2;
+
+  --color-cream-50: #fbf8f1;
+  --color-cream-100: #f5efe1;
+
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-cream-50 font-sans text-slate-800 antialiased;
+}
+
+::selection {
+  background-color: #c9a227;
+  color: #0a1a33;
+}
+
+/* Slim, brand-tinted scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #eef3fa;
+}
+::-webkit-scrollbar-thumb {
+  background: #0a1a33;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1a4276;
+}
+
+/* Ticker / marquee used by the Achievements strip */
+@keyframes eak-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-eak-marquee {
+  animation: eak-marquee 32s linear infinite;
+}
+.animate-eak-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Gentle float for decorative shapes */
+@keyframes eak-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+.animate-eak-float {
+  animation: eak-float 6s ease-in-out infinite;
+}
